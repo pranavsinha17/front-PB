@@ -25,7 +25,7 @@
               <a *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active" routerLink="logout" class="nav-link" >Logout</a>
           </li>
             <li class="nav-item active waves-light" mdbRippleRadius>
-              <a routerLinkActive="active" routerLink="login" class="nav-link" ><strong>Employee Login</strong></a>
+              <a *ngIf="!loginService.isUserLoggedIn()" routerLinkActive="active" routerLink="login" class="nav-link" ><strong>Employee Login</strong></a>
             </li>
             </ul>
             </div>
