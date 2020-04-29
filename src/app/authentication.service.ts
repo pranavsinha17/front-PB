@@ -15,12 +15,12 @@ export class User{
   providedIn: 'root'
 })
 export class AuthenticationService {
-
+  profil:string;
   constructor(private httpClient: HttpClient) { }
 
   authenticate(username, password) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.get<User>('http://localhost:1136/validateLogin',{headers}).pipe(
+    return this.httpClient.get<User>('http://localhost:8001/validateLogin',{headers}).pipe(
      map(
        userData => {
         sessionStorage.setItem('username',username);
@@ -30,15 +30,22 @@ export class AuthenticationService {
 
     );
   }
+  profile()
+  {
+   
+      return this.profil;
+  }
+
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem('username')
+    console.log(user);
+    this.profil=user;
     console.log(!(user === null))
     return !(user === null)
   }
 
   logOut() {
     sessionStorage.removeItem('username')
-    
   }
 }

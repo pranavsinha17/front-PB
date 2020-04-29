@@ -7,20 +7,23 @@
           <ul class="navbar-nav mr-auto">
             
               <li class="nav-item active waves-light" mdbRippleRadius>
-                  <a *ngIf="loginService.isUserLoggedIn()" class="nav-link">Account Department<span class="sr-only">(current)</span></a>
+                  <a *ngIf="loginService.isUserLoggedIn() && !ngOnInit()" class="nav-link">Account Department<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active waves-light" mdbRippleRadius>
-                  <a *ngIf="loginService.isUserLoggedIn()" class="nav-link">Loan Department</a>
+                  <a *ngIf="loginService.isUserLoggedIn() && !ngOnInit()" class="nav-link">Loan Department</a>
               </li>
               <li class="nav-item active waves-light" mdbRippleRadius>
-                  <a *ngIf="loginService.isUserLoggedIn()" class="nav-link">Transaction Department</a>
+                  <a *ngIf="loginService.isUserLoggedIn() && !ngOnInit()" class="nav-link">Transaction Department</a>
               </li>
               <li class="nav-item active waves-light" mdbRippleRadius>
-                <a *ngIf="loginService.isUserLoggedIn()" class="nav-link">Passbook Entry</a>
+                <a *ngIf="loginService.isUserLoggedIn() && !ngOnInit()" class="nav-link">Passbook Entry</a>
             </li>
           </ul>
           <div class="nav navbar-nav navbar-right">
             <ul class="navbar-nav mr-auto" >
+              <li class="nav-item active waves-light" mdbRippleRadius>
+                <a *ngIf="loginService.isUserLoggedIn() && ngOnInit()" routerLinkActive="active" routerLink="add-employee" class="nav-link" >Add Employee</a>
+            </li>
             <li class="nav-item active waves-light" mdbRippleRadius>
               <a *ngIf="loginService.isUserLoggedIn()" routerLinkActive="active" routerLink="logout" class="nav-link" >Logout</a>
           </li>

@@ -13,6 +13,7 @@ import appRoutes from './routerConfig';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LogoutComponent } from './logout/logout.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 
 
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     LogoutComponent,
+    AddEmployeeComponent,
     
   ],
   imports: [

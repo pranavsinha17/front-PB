@@ -9,11 +9,19 @@ import { AuthenticationService } from './authentication.service';
 export class AppComponent implements OnInit{
  
   constructor(public loginService:AuthenticationService){}
+  name:string;
   
-  ngOnInit(): void {
+  ngOnInit(): boolean {
+    this.name=this.loginService.profile();
+    if(this.name==='admin')
+    return true;
+   return false;
     
   }
-  title = 'mdb-angular-free';
+
+  
+
+  title = 'PecuniaBank';
 
 }
 
