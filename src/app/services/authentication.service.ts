@@ -15,6 +15,7 @@ export class User{
   providedIn: 'root'
 })
 export class AuthenticationService {
+
   profil:string;
   constructor(private httpClient: HttpClient) { }
 
@@ -24,6 +25,9 @@ export class AuthenticationService {
      map(
        userData => {
         sessionStorage.setItem('username',username);
+        let authString = 'Basic ' + btoa(username + ':' + password);
+          sessionStorage.setItem('basicauth', authString);
+
         return userData;
        }
      )

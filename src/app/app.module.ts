@@ -2,18 +2,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import appRoutes from './routerConfig';
 import { MatDialogModule } from '@angular/material/dialog';
-import { LogoutComponent } from './logout/logout.component';
-import { HttpClientModule } from '@angular/common/http';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { BasicAuthHttpInterceptorService } from './services/basic-auth-http-interceptor.service';
+import { TransactionByChequeComponent } from './components/transaction-by-cheque/transaction-by-cheque.component';
+import { TransactionBySlipComponent } from './components/transaction-by-slip/transaction-by-slip.component';
+
 
 
 
@@ -23,6 +26,9 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
     LoginComponent,
     LogoutComponent,
     AddEmployeeComponent,
+    TransactionByChequeComponent,
+    TransactionBySlipComponent,
+  
     
   ],
   imports: [
@@ -32,9 +38,8 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
     FormsModule,
     RouterModule.forRoot(appRoutes),
     MatDialogModule,
-    HttpClientModule
-  ],
-  providers: [],
+    HttpClientModule ],
+  providers: [{provide:HTTP_INTERCEPTORS, useClass:BasicAuthHttpInterceptorService, multi:true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,129 @@
+<div class="view intro hm-purple-light" style="">
+    <div class="full-bg-img flex-center">
+        <div class="fadeInUp flex-center">
+             <div class="container login-form-2" >
+                <div class="row" style="text-align: center;">
+                      <div class="col-md-12 ">
+                        <div >
+                            <div>
+                                <h1>ADD EMPLOYEE DETAILS</h1>
+                                <div class="row ">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input required  [(ngModel)]="first_name" type="text" class="form-control" placeholder="First Name *" #fnameControl="ngModel" />
+                                            <p *ngIf="!fnameControl.valid && fnameControl.touched" style="color: red;">*ID is required </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control" required  [(ngModel)]="branchId" >
+                                                <option class="hidden"  selected disabled>Branch Id *</option>
+                                                <option>118001</option>
+                                                <option>118002</option>
+                                                <option>118003</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+    
+                                            <input type="date"class="form-control" required [(ngModel)]="dob">
+                                            </div>
+                                     
+                                       
+                                        
+                                        <div class="form-group  "  style="text-align: justify;"> 
+                                          <label class="radio inline"> 
+                                                        <input type="radio" name="gender" value="male" class="form-control" checked [(ngModel)]='gender'>
+                                                        <span> Male </span> 
+                                                    </label>
+                                                    
+                                                    <label class="radio inline"> 
+                                                        <input type="radio" name="gender" value="female" class="form-control" [(ngModel)]='gender'>
+                                                        <span>   Female  </span> 
+                                                    </label>
+                                                </div>
+
+                                                
+                                                          
+                                    
+                                        
+                                        <div class="form-group">
+                                            <input required  [(ngModel)]="adhar" type="text" minlength="12" maxlength="12" name="txtEmpAdhar" class="form-control" placeholder="Employee Adhaar *" #adharControl="ngModel" />
+                                            <p *ngIf="!adharControl.valid && adharControl.touched" style="color: red;">*ID is required </p>
+                                        </div>
+                                        <div class="form-group " >
+                                            <input required  [(ngModel)]="pan" type="text" class="form-control" placeholder="PAN No. *" #panControl="ngModel" />
+                                            <p *ngIf="!panControl.valid && panControl.touched" style="color: red;">*ID is required </p>
+                                        </div> 
+                                       
+
+
+                                        
+                               </div>
+                                                         
+
+                                  
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input required  [(ngModel)]="last_name" type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Last Name *" #lnameControl="ngModel" />
+                                            <p *ngIf="!lnameControl.valid && lnameControl.touched" style="color: red;">*ID is required </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input required  [(ngModel)]="phone" type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Employee Mobile Number *" #phoneControl="ngModel" />
+                                            <p *ngIf="!phoneControl.valid && phoneControl.touched" style="color: red;">*ID is required </p>
+                                        </div>
+                                        
+                                       
+                                       
+                                        <div class="form-group">
+                                            <input required  [(ngModel)]="age" type="text" minlength="10" maxlength="250" name="txtEmpAdhar" class="form-control" placeholder="Age" #ageControl="ngModel" disabled/>
+                                            <p *ngIf="!ageControl.valid && ageControl.touched" style="color: red;">*ID is required </p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input required  [(ngModel)]="street" type="text" minlength="10" maxlength="250" name="txtEmpAdhar" class="form-control" placeholder="Street Name *" #streetControl="ngModel" />
+                                            <p *ngIf="!streetControl.valid && streetControl.touched" style="color: red;">*ID is required </p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input required  [(ngModel)]="city" type="text" minlength="10" maxlength="250" name="txtEmpAdhar" class="form-control" placeholder="City Name *" #cityControl="ngModel" />
+                                            <p *ngIf="!cityControl.valid && cityControl.touched" style="color: red;">*ID is required </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input required  [(ngModel)]="state" type="text" minlength="10" maxlength="250" name="txtEmpAdhar" class="form-control" placeholder="State Name *" #stateControl="ngModel" />
+                                            <p *ngIf="!stateControl.valid && stateControl.touched" style="color: red;">*ID is required </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input required  [(ngModel)]="zipcode" type="text" minlength="10" maxlength="250" name="txtEmpAdhar" class="form-control" placeholder="Zip Code *" #zipControl="ngModel" />
+                                            <p *ngIf="!zipControl.valid && zipControl.touched" style="color: red;">*ID is required </p>
+                                        </div>
+                                      
+                                         
+                                    </div>
+                                    
+                                </div>
+                                <input type="submit" class="btnRegister"  (click)="addEmployee()"/> 
+                                                                
+                                
+           
+                           
+                     
+          
+    
+           </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="page-footer font-small unique-color-dark">
+
+    
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="#">with ♥ @pranavsinha17</a>
+    </div>
+    <!-- Copyright -->
+    
+    </footer>
